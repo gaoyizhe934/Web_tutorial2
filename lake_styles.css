@@ -1,0 +1,316 @@
+@charset "utf-8";
+/* 引入题目提供的网页字体文件 */
+@font-face {
+   font-family: "Champagne";
+   src: url("cac_champagne.woff") format("woff"),
+        url("cac_champagne.ttf") format("truetype");
+   font-display: swap;
+}
+
+@font-face {
+   font-family: "DobkinPlain";
+   src: url("DobkinPlain.woff") format("woff"),
+        url("DobkinPlain.ttf") format("truetype");
+   font-display: swap;
+}
+
+:root {
+   --lake-deep: #173f56;
+   --lake-blue: rgb(48, 104, 132);
+   --lake-light: #dcecf0;
+   --sand: #f6edda;
+   --rust: #a34f2a;
+   --ink: #2d2d2d;
+}
+
+/* 基础颜色*/
+html {
+   background-color: #cbcc8a;
+}
+
+body {
+   min-width: 320px;
+   padding: 0 1rem 1rem;
+   color: rgb(45, 45, 45);
+   background-color: #cbcc8a;
+   line-height: 1.55;
+
+   /* 使用网格布局划分页眉、左右栏和页脚 */
+   display: grid;
+   grid-template-columns: minmax(0, 2.5fr) minmax(13rem, 1fr);
+   grid-template-areas:
+      "header header"
+      "left right"
+      "footer footer";
+   gap: 0;
+}
+
+body > header {
+   grid-area: header;
+   color: white;
+   background-color: var(--lake-deep);
+   box-shadow: 0 0.35rem 0.8rem rgba(23, 63, 86, 0.28);
+}
+
+body > header > img {
+   border-radius: 0 0 0.75rem 0.75rem;
+}
+
+/* 使用弹性布局，设置鼠标悬停和聚焦状态 */
+header > nav {
+   padding: 0.65rem 0.75rem 0.9rem;
+   background-color: #784A78;
+}
+
+header > nav > ul {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 0;
+   margin: 0;
+   padding: 0;
+   background-color: #784A78;
+   border: 0;
+   list-style-type: none;
+}
+
+header > nav > ul > li {
+   display: flex;
+   align-items: stretch;
+   flex: 1 1 auto;
+   border-right: 1px solid rgba(255, 255, 255, 0.32);
+}
+
+header > nav > ul > li:last-child {
+   border-right: 0;
+}
+
+header > nav a {
+   display: flex;
+   flex: 1 1 auto;
+   align-items: center;
+   justify-content: center;
+   padding: 0.55rem 0.65rem;
+   color: white;
+   background-color: transparent;
+   border: 0;
+   border-radius: 0;
+   font-family: inherit;
+   letter-spacing: 0;
+   text-decoration: none;
+   transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+header > nav a:hover,
+header > nav a:focus {
+   color: white;
+   background-color: rgba(255, 255, 255, 0.14);
+}
+
+body > section#leftcol {
+   grid-area: left;
+   width: auto;
+   margin: 0;
+   padding: 1rem;
+   float: none;
+   color: white;
+   background-color: #1B1C14;
+
+   /* 左栏使用弹性布局排列文章内容与两个信息面板 */
+   display: flex;
+   flex-wrap: wrap;
+   align-content: flex-start;
+}
+
+body > section#rightcol {
+   grid-area: right;
+   width: auto;
+   margin: 0;
+   padding: 1rem;
+   float: none;
+   color: white;
+   background-color: #582D5A;
+   box-shadow: 0 0.25rem 0.75rem rgba(23, 63, 86, 0.12);
+}
+
+/* 左栏的 id 选择器和子元素选择器 */
+#leftcol > h1 {
+   flex: 0 0 100%;
+   margin: 1.1rem 0 0.35rem;
+   color: white;
+   font-family: "Champagne", Georgia, "Times New Roman", serif;
+   font-size: 2.35rem;
+   letter-spacing: 0.03em;
+}
+
+#leftcol > img {
+   flex: 0 0 100%;
+   border-radius: 0.4rem;
+   box-shadow: 0 0.3rem 0.9rem rgba(23, 63, 86, 0.25);
+}
+
+#leftcol > p {
+   flex: 0 0 100%;
+   margin: 0.75rem 0;
+   padding: 0.15rem 0.25rem;
+   color: white;
+}
+
+/* 设置欢迎正文中的强调文字颜色 */
+#leftcol p em {
+   color: white;
+}
+
+/* 背景色、边框和列表标记 */
+#leftcol aside {
+   flex: 1 1 250px;
+   width: auto;
+   margin: 1rem 1.5% 1rem 0;
+   padding: 1rem 1rem 1.1rem;
+   float: none;
+   background-color: rgba(220, 236, 240, 0.72);
+   border: 1px solid rgba(23, 63, 86, 0.25);
+   border-radius: 0.6rem;
+   box-shadow: 0 0.2rem 0.6rem rgba(23, 63, 86, 0.12);
+}
+
+#leftcol aside:first-of-type {
+   color: white;
+   background-color: #E3A28E;
+   border-color: rgba(255, 255, 255, 0.35);
+}
+
+#leftcol aside:first-of-type a {
+   color: magenta;
+}
+
+#leftcol aside:last-of-type {
+   margin-right: 0;
+   color: white;
+   background-color: #D1BB72;
+   border-color: rgba(255, 255, 255, 0.35);
+}
+
+#leftcol aside h1 {
+   margin: 0 0 0.6rem;
+   color: white;
+   border-bottom: 2px solid rgba(255, 255, 255, 0.55);
+   font-family: "Champagne", Georgia, "Times New Roman", serif;
+   font-size: 1.65rem;
+}
+
+#leftcol aside h2 {
+   margin: 0 0 0.6rem;
+   color: white;
+   border-bottom: 2px solid rgba(255, 255, 255, 0.55);
+   font-size: 1.3rem;
+}
+
+#leftcol aside h3 {
+   margin: 0.75rem 0 0.25rem;
+   color: white;
+}
+
+/* 信息面板中的段落间距 */
+#leftcol aside p {
+   margin: 0.25rem 0 0.75rem;
+   padding-left: 1rem;
+}
+
+#leftcol aside ul {
+   margin: 0.45rem 0 0 1rem;
+   padding-left: 0.75rem;
+   list-style-type: disc;
+}
+
+#leftcol aside li {
+   margin: 0.35rem 0;
+   padding-left: 0.25rem;
+}
+
+#leftcol aside li::marker {
+   color: white;
+   font-size: 1.15em;
+}
+
+/* 右侧栏快捷导航样式 */
+#rightcol nav h2 {
+   margin: 0.85rem 0 0.35rem;
+   color: white;
+   border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+   font-family: "Champagne", Georgia, "Times New Roman", serif;
+   font-size: 1.45rem;
+}
+
+#rightcol nav ul {
+   margin: 0;
+   padding-left: 1.1rem;
+   list-style-type: square;
+}
+
+#rightcol nav li {
+   margin: 0.2rem 0;
+   padding-left: 0.15rem;
+}
+
+#rightcol nav li::marker {
+   color: #D293E3;
+}
+
+#rightcol nav a {
+   color: white;
+   text-decoration: none;
+}
+
+#rightcol nav a:hover,
+#rightcol nav a:focus {
+   color: #D293E3;
+   text-decoration: underline;
+}
+
+/* 右侧栏访客评价文字 */
+blockquote {
+   margin: 1rem 0 0;
+   padding: 1rem;
+   background-color: transparent;
+   border-radius: 0.45rem;
+   color: #D293E3;
+   font-style: normal;
+}
+
+/* 页面底部灰色信息栏 */
+footer {
+   grid-area: footer;
+   clear: both;
+   margin-top: 0;
+   padding: 0.45rem 1rem;
+   color: white;
+   background-color: #4D464E;
+   border: 1px solid rgba(255, 255, 255, 0.3);
+   border-radius: 0;
+   text-align: center;
+   letter-spacing: 0.03em;
+}
+
+footer::before {
+   content: "❖ ";
+   color: var(--sand);
+}
+
+/* 改为单列显示 */
+@media (max-width: 760px) {
+   body {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+         "header"
+         "left"
+         "right"
+         "footer";
+      gap: 0;
+      padding: 0 0.75rem 0.75rem;
+   }
+
+   #leftcol aside {
+      flex-basis: 100%;
+      margin-right: 0;
+   }
+}
