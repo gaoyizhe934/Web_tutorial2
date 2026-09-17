@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* 结构样式：控制页面宽度和主要栏目位置 */
+/* Structural styles: control page width and main column positions */
 body {
 	margin: 0 auto;
 	width: 100%;
@@ -30,7 +30,7 @@ footer {
 	clear: both;
 }
 
-/* 避免内边距和边框撑大元素尺寸 */
+/* Prevent padding and borders from increasing element size */
 address, article, aside, blockquote, body, cite, 
 div, dl, dt, dd, em, figcaption, figure, footer, 
 h1, h2, h3, h4, h5, h6, header, html, img, 
@@ -42,8 +42,7 @@ li, main, nav, ol, p, section, span, ul {
 }
 
 
-/* 页眉导航布局 */
-
+/* Header navigation layout */
 header > nav {
 	display: table;
 	width: 100%;
@@ -65,8 +64,7 @@ header > nav a {
 }
 
 
-/* 左右栏目与信息面板布局 */
-
+/* Left and right columns and information panel layout */
 section#leftcol aside {
 	width: 42%;
 	float: left;

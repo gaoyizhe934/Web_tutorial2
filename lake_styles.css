@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* 引入题目提供的网页字体文件 */
+/* Import the web fonts provided with the assignment */
 @font-face {
    font-family: "Champagne";
    src: url("cac_champagne.woff") format("woff"),
@@ -23,7 +23,7 @@
    --ink: #2d2d2d;
 }
 
-/* 基础颜色*/
+/* Base colors */
 html {
    background-color: #cbcc8a;
 }
@@ -35,7 +35,7 @@ body {
    background-color: #cbcc8a;
    line-height: 1.55;
 
-   /* 使用网格布局划分页眉、左右栏和页脚 */
+   /* Use grid layout for the header, left and right columns, and footer */
    display: grid;
    grid-template-columns: minmax(0, 2.5fr) minmax(13rem, 1fr);
    grid-template-areas:
@@ -56,7 +56,7 @@ body > header > img {
    border-radius: 0 0 0.75rem 0.75rem;
 }
 
-/* 使用弹性布局，设置鼠标悬停和聚焦状态 */
+/* Use flexbox and set hover and focus states */
 header > nav {
    padding: 0.65rem 0.75rem 0.9rem;
    background-color: #784A78;
@@ -115,7 +115,7 @@ body > section#leftcol {
    color: white;
    background-color: #1B1C14;
 
-   /* 左栏使用弹性布局排列文章内容与两个信息面板 */
+   /* Use flexbox in the left column for article content and two information panels */
    display: flex;
    flex-wrap: wrap;
    align-content: flex-start;
@@ -132,7 +132,7 @@ body > section#rightcol {
    box-shadow: 0 0.25rem 0.75rem rgba(23, 63, 86, 0.12);
 }
 
-/* 左栏的 id 选择器和子元素选择器 */
+/* ID selectors and child selectors for the left column */
 #leftcol > h1 {
    flex: 0 0 100%;
    margin: 1.1rem 0 0.35rem;
@@ -155,12 +155,12 @@ body > section#rightcol {
    color: white;
 }
 
-/* 设置欢迎正文中的强调文字颜色 */
+/* Set the emphasis text color in the welcome text */
 #leftcol p em {
    color: white;
 }
 
-/* 背景色、边框和列表标记 */
+/* Background colors, borders, and list markers */
 #leftcol aside {
    flex: 1 1 250px;
    width: auto;
@@ -210,7 +210,7 @@ body > section#rightcol {
    color: white;
 }
 
-/* 信息面板中的段落间距 */
+/* Paragraph spacing in the information panels */
 #leftcol aside p {
    margin: 0.25rem 0 0.75rem;
    padding-left: 1rem;
@@ -232,7 +232,7 @@ body > section#rightcol {
    font-size: 1.15em;
 }
 
-/* 右侧栏快捷导航样式 */
+/* Quick navigation styles in the right column */
 #rightcol nav h2 {
    margin: 0.85rem 0 0.35rem;
    color: white;
@@ -267,7 +267,7 @@ body > section#rightcol {
    text-decoration: underline;
 }
 
-/* 右侧栏访客评价文字 */
+/* Visitor testimonial text in the right column */
 blockquote {
    margin: 1rem 0 0;
    padding: 1rem;
@@ -277,7 +277,7 @@ blockquote {
    font-style: normal;
 }
 
-/* 页面底部灰色信息栏 */
+/* Gray information bar at the bottom of the page */
 footer {
    grid-area: footer;
    clear: both;
@@ -296,7 +296,7 @@ footer::before {
    color: var(--sand);
 }
 
-/* 改为单列显示 */
+/* Change to a single column */
 @media (max-width: 760px) {
    body {
       grid-template-columns: 1fr;
